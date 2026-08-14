@@ -5,7 +5,7 @@ import { useUmami } from '@/hooks/use-umami';
 import type { AnalyticsEventData } from '@/types/analytics';
 import { type Project } from '@/types/project';
 import { Link } from 'next-view-transitions';
-import React from 'react';
+import React, { useState } from 'react';
 
 import ArrowRight from '../svgs/ArrowRight';
 import Github from '../svgs/Github';
@@ -17,6 +17,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const { trackEvent } = useUmami();
+  const [expanded, setExpanded] = useState(false);
 
   // Stable, human-readable id derived from the project's details route, e.g.
   // '/projects/sleek-portfolio' -> 'sleek-portfolio'. Keeps every project
@@ -74,7 +75,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           {/* Description */}
-          <p className="text-secondary line-clamp-3">{project.description}</p>
+          <p className="text-secondary">{project.description}</p>
+          {project.fullDescription && (
+            <div>
+              {expanded && (
+                <p className="text-secondary mt-2">
+                  {project.fullDescription}
+                </p>
+              )}
+              <button
+                type="button"
+                onClick={() => setExpanded((prev) => !prev)}
+                className="text-primary mt-2 text-sm font-medium underline-offset-4 hover:underline"
+              >
+                {expanded ? 'Read less' : 'Read more'}
+              </button>
+            </div>
+          )}
 
           {/* Technologies */}
           <div>

@@ -11,6 +11,8 @@ export const projects: Project[] = [
   {
     title: 'Portfolio Intelligence Assistant',
     description:
+      'A single-agent LLM chat assistant for portfolio Q&A. Built with LangGraph, RAG and ChromaDB; fetches live stock data via an MCP stock-market API.',
+    fullDescription:
       'A single-agent LLM chat system where users upload their portfolio and ask questions about it. Built with LangGraph, it uses a RAG architecture that stores portfolio documents in a ChromaDB vector database and fetches live stock data through an MCP-protocol stock market API integration.',
     image: '/photo2.jpg',
     link: 'https://github.com/koraysrn/portfolio_intelligence_assistant',
@@ -32,6 +34,8 @@ export const projects: Project[] = [
   {
     title: 'Customer Segmentation Project',
     description:
+      'A data analytics project that segments customers using demographics, web/app usage and purchase history. Reached 97.38% accuracy with an optimized XGBoost model.',
+    fullDescription:
       'A data analytics project that segments customers using demographic data, web/app usage and purchase history. It follows data exploration and preprocessing, feature engineering, imbalanced data handling, modeling and evaluation, reaching 97.38% overall accuracy with an optimized XGBoost model.',
     image: '/photo2.jpg',
     link: 'https://github.com/koraysrn/Customer_Segmentation_Project',
@@ -52,6 +56,8 @@ export const projects: Project[] = [
   {
     title: 'Multi-Agent Portfolio Intelligence Assistant',
     description:
+      'Multi-agent version of the portfolio assistant with advanced UI/UX, charts and financial metrics. Coordinates Controller, Planning, Reflection, Critic, Decision and other agents to turn market data, news and RAG into a single investment strategy.',
+    fullDescription:
       'The multi-agent version of the portfolio intelligence assistant with an advanced UI/UX, charts and financial metrics. It coordinates Controller, Planning, Execution, Auto Intelligence Summary, Reflection, Critic, Decision, Confidence, Missing Information and Dynamic Tool Router agents to turn engine outputs, news, fundamentals, technical analysis and RAG into a single investment strategy.',
     image: '/photo2.jpg',
     link: 'https://github.com/koraysrn/multiagent-portfolio-intelligence-assistant',
