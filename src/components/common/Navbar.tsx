@@ -18,13 +18,22 @@ export default function Navbar() {
               data: { buttonId: 'logo', section: 'navbar' },
             }}
           >
-            <Image
-              className="h-12 w-12 rounded-md border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300"
-              src={navbarConfig.logo.src}
-              alt={navbarConfig.logo.alt}
-              width={navbarConfig.logo.width}
-              height={navbarConfig.logo.height}
-            />
+            <div className="relative h-12 w-12">
+              <Image
+                className="h-12 w-12 rounded-md border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300"
+                src={navbarConfig.logo.src}
+                alt={navbarConfig.logo.alt}
+                width={navbarConfig.logo.width}
+                height={navbarConfig.logo.height}
+              />
+              <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-0.5">
+                <span className="block h-0.5 w-7 rounded-full bg-gradient-to-r from-pink-500 via-orange-400 to-cyan-400" />
+                <span className="bg-gradient-to-r from-pink-500 via-orange-400 to-cyan-400 bg-clip-text text-[11px] font-black uppercase leading-none text-transparent">
+                  Home
+                </span>
+                <span className="block h-0.5 w-7 rounded-full bg-gradient-to-r from-pink-500 via-orange-400 to-cyan-400" />
+              </div>
+            </div>
           </TrackedLink>
           <div className="flex items-center justify-center gap-4">
             {navbarConfig.navItems.map((item) => (

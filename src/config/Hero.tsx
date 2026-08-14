@@ -5,7 +5,7 @@ export const heroConfig = {
   // Personal Information
   name: 'Koray Sirin',
   title: 'AI Developer',
-  avatar: '/photo_6050694930008576177_y.jpg',
+  avatar: '/photo.jpeg',
 
   // Skills Configuration
   skills: [] as { name: string; href: string; component: string }[],
