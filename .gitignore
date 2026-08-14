@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local photo backups (used copies live in public/)
+/photo2.jpg
+/intellica_logo.jpg
+/photo_6050694930008576177_y.jpg
