@@ -16,7 +16,7 @@ export const siteConfig = {
   description:
     'Koray Sirin — Portfolio of an AI Engineer working on artificial intelligence, machine learning and multi-agent systems.',
   url: process.env.NEXT_PUBLIC_URL || 'http://localhost:3000',
-  ogImage: '/photo_6050694930008576177_y.jpg',
+  ogImage: '/photo.jpeg',
   author: {
     name: about.name,
     github: 'koraysrn',
@@ -48,7 +48,7 @@ export const pageMetadata: Record<string, PageMeta> = {
       'Python',
       'portfolio',
     ],
-    ogImage: '/photo_6050694930008576177_y.jpg',
+    ogImage: '/photo.jpeg',
     twitterCard: 'summary_large_image',
   },
 
@@ -58,7 +58,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     description:
       'Get in touch with me for collaborations, projects or opportunities.',
     keywords: ['contact', 'AI Engineer', 'email', 'GitHub'],
-    ogImage: '/photo_6050694930008576177_y.jpg',
+    ogImage: '/photo.jpeg',
     twitterCard: 'summary',
   },
 
@@ -68,7 +68,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     description:
       'Explore my professional work experience in software and artificial intelligence.',
     keywords: ['work experience', 'career', 'AI', 'internship', 'Intellica'],
-    ogImage: '/photo_6050694930008576177_y.jpg',
+    ogImage: '/photo.jpeg',
     twitterCard: 'summary_large_image',
   },
 
@@ -78,7 +78,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     description:
       'Explore my projects and work in artificial intelligence and software.',
     keywords: ['projects', 'AI', 'software', 'machine learning'],
-    ogImage: '/photo_6050694930008576177_y.jpg',
+    ogImage: '/photo.jpeg',
     twitterCard: 'summary_large_image',
   },
 
@@ -88,7 +88,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     description:
       'My thoughts and writings on artificial intelligence, software and technology.',
     keywords: ['blog', 'artificial intelligence', 'software', 'technology'],
-    ogImage: '/photo_6050694930008576177_y.jpg',
+    ogImage: '/photo.jpeg',
     twitterCard: 'summary_large_image',
   },
 
@@ -97,7 +97,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     title: 'Resume — Koray Sirin',
     description: `View and download Koray Sirin's resume.`,
     keywords: ['resume', 'cv', 'AI Engineer', 'skills'],
-    ogImage: '/photo_6050694930008576177_y.jpg',
+    ogImage: '/photo.jpeg',
     twitterCard: 'summary',
   },
 
@@ -107,7 +107,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     description:
       'The tools and software I use to get my work done efficiently.',
     keywords: ['gear', 'tools', 'software', 'development environment'],
-    ogImage: '/photo_6050694930008576177_y.jpg',
+    ogImage: '/photo.jpeg',
     twitterCard: 'summary_large_image',
   },
 };

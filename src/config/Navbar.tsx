@@ -4,12 +4,6 @@ export interface NavItem {
 }
 
 export const navbarConfig = {
-  logo: {
-    src: '/photo_6050694930008576177_y.jpg',
-    alt: 'logo',
-    width: 100,
-    height: 100,
-  },
   navItems: [
     {
       label: 'Experience',
