@@ -151,6 +151,7 @@ function fallbackDescription(repo) {
     title: humanizeTitle(repo.name),
     shortDescription: description,
     fullDescription: description,
+    technologies: buildTechnologies(repo),
   };
 }
 
@@ -166,9 +167,13 @@ async function generateDescriptions(repo, markdown) {
     '2. "shortDescription": 1-2 sentences for a project card.',
     '3. "fullDescription": 2-4 sentences explaining what the project does,',
     '   its purpose, and notable technical highlights.',
+    '4. "technologies": an array of 4-8 key technologies, languages,',
+    '   frameworks and libraries actually used in the project, as short',
+    '   names (e.g. "Python", "Next.js", "LangGraph").',
     '',
     'Respond with valid JSON only, using exactly this shape:',
-    '{"title": "...", "shortDescription": "...", "fullDescription": "..."}',
+    '{"title": "...", "shortDescription": "...", "fullDescription": "...",',
+    '"technologies": ["...", "..."]}',
     '',
     `Repository name: ${repo.name}`,
     `GitHub description: ${repo.description || '(none)'}`,
@@ -219,6 +224,12 @@ async function generateDescriptions(repo, markdown) {
         parsed.shortDescription ||
         repo.description ||
         '',
+      technologies:
+        Array.isArray(parsed.technologies) && parsed.technologies.length > 0
+          ? parsed.technologies.filter(
+              (tech) => typeof tech === 'string' && tech.trim().length > 0,
+            )
+          : buildTechnologies(repo),
     };
   } catch (error) {
     console.error(`  DeepSeek failed for ${repo.name}: ${error.message}`);
@@ -251,7 +262,7 @@ async function main() {
       github: githubUrl,
       live: liveUrl,
       link: githubUrl,
-      technologies: buildTechnologies(repo),
+      technologies: descriptions.technologies,
       details: false,
       projectDetailsPageSlug: githubUrl,
       updatedAt: repo.pushed_at || repo.updated_at || new Date().toISOString(),
