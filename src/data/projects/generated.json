@@ -1,0 +1,41 @@
+[
+  {
+    "repo": "multiagent-portfolio-intelligence-assistant",
+    "title": "Multi-Agent Portfolio Intelligence Assistant",
+    "description": "Multi-agent version of the portfolio assistant with advanced UI/UX, charts and financial metrics. Coordinates Controller, Planning, Reflection, Critic, Decision and other agents to turn market data, news and RAG into a single investment strategy.",
+    "fullDescription": "The multi-agent version of the portfolio intelligence assistant with an advanced UI/UX, charts and financial metrics. It coordinates Controller, Planning, Execution, Auto Intelligence Summary, Reflection, Critic, Decision, Confidence, Missing Information and Dynamic Tool Router agents to turn engine outputs, news, fundamentals, technical analysis and RAG into a single investment strategy.",
+    "github": "https://github.com/koraysrn/multiagent-portfolio-intelligence-assistant",
+    "live": "https://github.com/koraysrn/multiagent-portfolio-intelligence-assistant",
+    "link": "https://github.com/koraysrn/multiagent-portfolio-intelligence-assistant",
+    "technologies": ["Python", "LangGraph", "CrewAI", "RAG", "Multi-Agent", "LLM"],
+    "details": false,
+    "projectDetailsPageSlug": "https://github.com/koraysrn/multiagent-portfolio-intelligence-assistant",
+    "updatedAt": "2026-02-10T00:00:00.000Z"
+  },
+  {
+    "repo": "portfolio_intelligence_assistant",
+    "title": "Portfolio Intelligence Assistant",
+    "description": "A single-agent LLM chat assistant for portfolio Q&A. Built with LangGraph, RAG and ChromaDB; fetches live stock data via an MCP stock-market API.",
+    "fullDescription": "A single-agent LLM chat system where users upload their portfolio and ask questions about it. Built with LangGraph, it uses a RAG architecture that stores portfolio documents in a ChromaDB vector database and fetches live stock data through an MCP-protocol stock market API integration.",
+    "github": "https://github.com/koraysrn/portfolio_intelligence_assistant",
+    "live": "https://github.com/koraysrn/portfolio_intelligence_assistant",
+    "link": "https://github.com/koraysrn/portfolio_intelligence_assistant",
+    "technologies": ["Python", "LangGraph", "ChromaDB", "RAG", "MCP", "LLM"],
+    "details": false,
+    "projectDetailsPageSlug": "https://github.com/koraysrn/portfolio_intelligence_assistant",
+    "updatedAt": "2026-01-15T00:00:00.000Z"
+  },
+  {
+    "repo": "Customer_Segmentation_Project",
+    "title": "Customer Segmentation Project",
+    "description": "A data analytics project that segments customers using demographics, web/app usage and purchase history. Reached 97.38% accuracy with an optimized XGBoost model.",
+    "fullDescription": "A data analytics project that segments customers using demographic data, web/app usage and purchase history. It follows data exploration and preprocessing, feature engineering, imbalanced data handling, modeling and evaluation, reaching 97.38% overall accuracy with an optimized XGBoost model.",
+    "github": "https://github.com/koraysrn/Customer_Segmentation_Project",
+    "live": "https://github.com/koraysrn/Customer_Segmentation_Project",
+    "link": "https://github.com/koraysrn/Customer_Segmentation_Project",
+    "technologies": ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost"],
+    "details": false,
+    "projectDetailsPageSlug": "https://github.com/koraysrn/Customer_Segmentation_Project",
+    "updatedAt": "2025-11-20T00:00:00.000Z"
+  }
+]

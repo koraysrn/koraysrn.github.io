@@ -5,6 +5,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    # Every night at midnight (Europe/Istanbul = 21:00 UTC).
+    - cron: '0 21 * * *'
 
 permissions:
   contents: read
@@ -33,6 +36,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Fetch and describe projects
+        run: node scripts/fetch-projects.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
 
       - name: Build static site
         run: npm run build

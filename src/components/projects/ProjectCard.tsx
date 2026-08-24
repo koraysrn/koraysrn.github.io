@@ -100,16 +100,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </h4>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((technology, index) => (
-                <Tooltip key={index}>
-                  <TooltipTrigger>
-                    <div className="size-6 transition-all duration-300 hover:scale-120 hover:cursor-pointer">
-                      {technology.icon}
-                    </div>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{technology.name}</p>
-                  </TooltipContent>
-                </Tooltip>
+                <span
+                  key={index}
+                  className="rounded-md bg-black/5 px-2 py-1 text-xs font-medium text-black dark:bg-white/15 dark:text-white"
+                >
+                  {technology.name}
+                </span>
               ))}
             </div>
           </div>
@@ -117,26 +113,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </CardContent>
 
       {project.details && (
-        <CardFooter className="flex justify-between p-6 pt-0">
-          <div
-            className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs ${
-              project.isWorking
-                ? 'border-green-300 bg-green-500/10'
-                : 'border-red-300 bg-red-500/10'
-            }`}
-          >
-            {project.isWorking ? (
-              <>
-                <div className="size-2 animate-pulse rounded-full bg-green-500" />
-                Systems Running
-              </>
-            ) : (
-              <>
-                <div className="size-2 animate-pulse rounded-full bg-red-500" />
-                Under Development
-              </>
-            )}
-          </div>
+        <CardFooter className="flex justify-end p-6 pt-0">
           <Link
             href={project.projectDetailsPageSlug}
             className="text-secondary hover:text-primary flex items-center gap-2 text-sm underline-offset-4 transition-colors hover:underline"
