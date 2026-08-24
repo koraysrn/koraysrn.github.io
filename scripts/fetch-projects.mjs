@@ -163,16 +163,15 @@ async function generateDescriptions(repo, markdown) {
   const prompt = [
     'You are helping populate a portfolio website for a developer.',
     'Given the information about a GitHub repository below, produce:',
-    '1. "title": a clean, professional, human-readable project title.',
-    '2. "shortDescription": 1-2 sentences for a project card.',
-    '3. "fullDescription": 2-4 sentences explaining what the project does,',
+    '1. "shortDescription": 1-2 sentences for a project card.',
+    '2. "fullDescription": 2-4 sentences explaining what the project does,',
     '   its purpose, and notable technical highlights.',
-    '4. "technologies": an array of 4-8 key technologies, languages,',
+    '3. "technologies": an array of 4-8 key technologies, languages,',
     '   frameworks and libraries actually used in the project, as short',
     '   names (e.g. "Python", "Next.js", "LangGraph").',
     '',
     'Respond with valid JSON only, using exactly this shape:',
-    '{"title": "...", "shortDescription": "...", "fullDescription": "...",',
+    '{"shortDescription": "...", "fullDescription": "...",',
     '"technologies": ["...", "..."]}',
     '',
     `Repository name: ${repo.name}`,
@@ -216,7 +215,7 @@ async function generateDescriptions(repo, markdown) {
     const parsed = JSON.parse(content);
 
     return {
-      title: parsed.title || humanizeTitle(repo.name),
+      title: humanizeTitle(repo.name),
       shortDescription:
         parsed.shortDescription || repo.description || '',
       fullDescription:
