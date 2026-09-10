@@ -236,14 +236,45 @@ async function generateDescriptions(repo, markdown) {
   }
 }
 
+/**
+ * Read the previously generated project list so we can skip repos whose
+ * content has not changed since the last run. This keeps LLM calls to the
+ * minimum: DeepSeek only runs for new repositories or repos that were pushed
+ * to after the previous build.
+ */
+function readExistingProjects() {
+  try {
+    if (!fs.existsSync(OUTPUT_PATH)) return [];
+    const parsed = JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf8'));
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    console.warn(`Could not read existing ${OUTPUT_PATH}: ${error.message}`);
+    return [];
+  }
+}
+
 async function main() {
   console.log('Fetching repositories with the "portfolio" topic...');
   const repos = await getRepositories();
   console.log(`Found ${repos.length} repository(ies).`);
 
+  const existingByRepo = new Map(
+    readExistingProjects().map((project) => [project.repo, project]),
+  );
+
   const projects = [];
 
   for (const repo of repos) {
+    const pushedAt =
+      repo.pushed_at || repo.updated_at || new Date().toISOString();
+    const existing = existingByRepo.get(repo.name);
+
+    if (existing && existing.updatedAt === pushedAt) {
+      console.log(`Skipping ${repo.name} (unchanged).`);
+      projects.push(existing);
+      continue;
+    }
+
     console.log(`Processing ${repo.name}...`);
 
     const filePaths = await listMarkdownFiles(repo);
@@ -264,7 +295,7 @@ async function main() {
       technologies: descriptions.technologies,
       details: false,
       projectDetailsPageSlug: githubUrl,
-      updatedAt: repo.pushed_at || repo.updated_at || new Date().toISOString(),
+      updatedAt: pushedAt,
     });
   }
 
